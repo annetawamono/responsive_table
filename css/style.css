@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Varela+Round&display=swap');
+
+h1, h2, h3, caption {
+  font-family: 'Varela Round', sans-serif;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+p, a, nav, td, tr, th, ul, li {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p, ul, li, a {
+  font-size: 24px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: inherit;
+  background-image: linear-gradient(#A14271, #E29B6A, #E29B6A);
+  background-repeat: no-repeat;
+  color: white;
+  background-color: #E29B6A;
+}
+
+img.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo.mobile {
+  margin-top: 94px;
+}
+
+nav {
+  font-weight: bold;
+  width: 100vw;
+  height: 130px;
+  box-sizing: border-box;
+  padding: 16px 55px 0px 55px;
+  background-color: #E29B6A;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+}
+
+nav a:nth-child(2), nav a:nth-child(4) {
+  margin-left: 5%;
+}
+
+nav a:nth-child(4) {
+  margin-right: 5%;
+}
+
+.active {
+  color: #A14271;
+}
+
+.logo.desktop {
+  display: none;
+}
+
+main h1 {
+  text-align: center;
+  padding-top: 200px;
+}
+
+main.about, main.ref {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  line-height: 32px;
+  margin-top: 100px;
+}
+
+.table caption {
+  position: absolute;
+  top: 450px;
+  width: 100%;
+  font-size: 36px;
+}
+
+/* Desktop version */
+@media only screen and (min-width: 769px) {
+  .logo.desktop {
+    display: inline;
+    position: relative;
+    top: 87px;
+  }
+
+  .logo.mobile {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    height: 311px;
+    background-color: initial;
+  }
+
+  nav a:nth-child(2), nav a:nth-child(4) {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  main.about, main.ref{
+    text-align: left;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  main.table {
+    width: 1077px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+
+  .table table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .table caption {
+    position: static;
+    margin-top: 70px;
+    margin-bottom: 19px;
+  }
+
+  .table table, .table td, .table th {
+    border-collapse: collapse;
+  }
+
+  .table th, .table td {
+    border: 1px solid white;
+    padding: 38px 24px;
+  }
+
+}
+
+/* Breakpoint for table mobile responsiveness. I tried a Mobile First approach but found it difficult to "fix" the table in the desktop view after breaking it apart in the mobile view */
+
+@media only screen and (max-width: 768px) {
+
+  .table table, .table thead, .table tbody, .table th, .table td, .table tr {
+    display: block;
+  }
+
+  /* .table caption {
+    position: absolute;
+    top: 450px;
+    width: 100%;
+    font-size: 36px;
+  } */
+
+  .table table {
+    background-color: #E29B6A;
+    margin-top: 250px;
+    margin-bottom: 100px;
+  }
+
+  .table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .table tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .table th:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .table td:nth-last-of-type(1):before, .table td:nth-last-of-type(2):before, .table td:nth-last-of-type(3):before, .table td:nth-last-of-type(4):before, .table td:nth-last-of-type(5):before {
+    position: absolute;
+    left: 5%;
+    font-weight: bold;
+  }
+
+  .table td:nth-last-of-type(1):before {
+    content: "Calendar Date";
+  }
+
+  .table td:nth-last-of-type(2):before {
+    content: "TD of Greatest Eclipse";
+  }
+
+  .table td:nth-last-of-type(3):before {
+    content: "Eclipse Type";
+  }
+
+  .table td:nth-last-of-type(4):before {
+    content: "Central Duration";
+  }
+
+  .table td:nth-last-of-type(5):before {
+    content: "Geographic Region of Eclipse Visibility";
+  }
+}
